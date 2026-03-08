@@ -20,14 +20,12 @@ func maxProfitFirst(prices []int) int {
 func maxProfit(prices []int) int {
 	result := 0
 	minEl := prices[0]
-	minInd := 0
 	for i := 1; i < len(prices); i++ {
 		if prices[i] < minEl {
 			minEl = prices[i]
-			minInd = i
 		}
 		diff := prices[i] - minEl
-		if diff > result && minInd < i {
+		if diff > result {
 			result = diff
 		}
 	}
