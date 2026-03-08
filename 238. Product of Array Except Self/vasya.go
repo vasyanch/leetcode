@@ -4,7 +4,7 @@ package main
 import "fmt"
 
 // speed - O(n), memory - O(n)
-func productExceptSelf(nums []int) []int {
+func productExceptSelfFirst(nums []int) []int {
 	left := make([]int, len(nums))
 	right := make([]int, len(nums))
 	prevLeft := 1
@@ -24,7 +24,7 @@ func productExceptSelf(nums []int) []int {
 }
 
 // speed - O(n), memory - O(1)
-func productExceptSelfOptimize(nums []int) []int {
+func productExceptSelf(nums []int) []int {
 	left := make([]int, len(nums))
 	left[0] = 1
 	for j := 1; j < len(nums); j++ {
@@ -40,6 +40,6 @@ func productExceptSelfOptimize(nums []int) []int {
 }
 
 func main() {
-	fmt.Println(productExceptSelfOptimize([]int{-1, 1, 0, -3, 3}))
+	fmt.Println(productExceptSelf([]int{-1, 1, 0, -3, 3}))
 	fmt.Println(productExceptSelf([]int{1, 2, 3, 4}))
 }
